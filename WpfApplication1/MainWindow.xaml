@@ -1,0 +1,21 @@
+﻿<Window x:Class="WpfApplication1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:aquareel="Aquareel"
+        xmlns:follow="Follow"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <mc:AlternateContent>
+            <mc:Choice Requires="follow">
+                <TextBlock Margin="6,6,0,0" Name="lblVersion" VerticalAlignment="Top" TextWrapping="Wrap">Version FOLLOW</TextBlock>
+            </mc:Choice>
+            <mc:Choice Requires="aquareel">
+                <TextBlock Margin="6,6,0,0" Name="lblVersion" VerticalAlignment="Top" TextWrapping="Wrap">Version AQUAREEL</TextBlock>
+            </mc:Choice>
+            <mc:Fallback>
+                <TextBlock Margin="6,6,0,0" Name="lblVersion" VerticalAlignment="Top" TextWrapping="Wrap">Version OTHER</TextBlock>
+            </mc:Fallback>
+        </mc:AlternateContent>
+    </Grid>
+</Window>
